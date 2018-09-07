@@ -1,16 +1,28 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: 404
+*/
+
+get_header(); ?>
+
+
+
+
+
+
 <div id="Blog-post">
-    <header class="entry-header" style="background-image: url(<?php echo get_template_directory_uri(); ?>/dist/img/s-1.jpg);">
+    <header class="entry-header image404" style="background-image: url(<?php echo get_template_directory_uri(); ?>/dist/img/beaker404.jpg);">
         <div class="content  wow fadeInUp">
-            <div class="container">
-                <h1>Page not found</h1>
+            <div class="text404 ">
+                <h1>404</h1>
+                <h2>Page not found.</h2>
+                <h3><a href="<?php echo home_url() ?>">Back to Home</a></h3>
             </div>
     </header>
     <div class="container">
         <div class="row wow fadeInUp">
             <!--blog posts container-->
             <div class="col-md-10 col-sm-10 col-md-offset-1 single-post">
-                <h2>What’s worse, a hilarious 404 page can’t be found either.</h2>
                 <br>
                 <div class="clearfix"></div>
             </div>
@@ -19,4 +31,7 @@
         </div>
     </div>
 </div>
+  
+  
+  
 <?php get_footer(); ?>

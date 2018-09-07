@@ -1,3 +1,10 @@
+<?php
+/*
+Template Name: Home
+*/
+
+ ?>
+<!--blog body-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +34,7 @@
 		<ul>
 			<li class="flex-item nav"><a href="<?php echo home_url() ?>">Home</a></li>
 			<li class="flex-item nav"><a href="<?php echo home_url() ?>/portfolio">Portfolio</a></li>
+			<li class="flex-item nav"><a href="<?php echo home_url() ?>/merch">Merch</a></li>
 			<li class="flex-item nav"><a href="<?php echo home_url() ?>/contact">Contact</a></li>
             <li class="flex-item nav"><a href="<?php echo home_url() ?>/general">General</a></li>
             <li class="flex-item nav"><a href="<?php echo home_url() ?>/generalSidebar">Sidebar</a></li>
@@ -47,3 +55,35 @@
       
       
 	</div>
+  
+  
+  
+  <!--Hero Image-->
+	
+    <div class="heroimage">
+			<a href="<?php echo home_url() ?>/portfolio">
+				<picture>
+					<source media="(min-width: 650px)" srcset="<?php echo get_template_directory_uri();?>/dist/img/batman-header.jpg">
+					<img src="<?php echo get_template_directory_uri();?>/dist/img/batman-header-small.jpg" alt="Large Hero image showing part of Batman Returns artwork">	
+				</picture>
+			</a>
+			<div class="textright">Batman Returns - Artwork from 2017</div>
+	</div>
+	
+	<div class="generalsection">
+      <div class="generalcontainer">
+        <?php if (have_posts()): ?>
+          <article class="post">   
+            <?php // TO SHOW THE PAGE CONTENTS?>
+            <?php while (have_posts()) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+              <?php the_content(); ?> <!-- Page Content (WYSIWYG Field) -->
+            <?php endwhile; //resetting the page loop?>
+            <?php wp_reset_query(); //resetting the page query?>
+          </article>
+        <?php else: ?>
+          <h2>Sorry, No Post Found</h2>
+        <?php endif; ?>
+
+      </div>
+	</div>
+<?php get_footer(); ?>
